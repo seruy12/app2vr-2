@@ -1,27 +1,26 @@
-package com.b.a.a;
+package com.nitro888.nitroaction360;
 
-import com.c.a.g;
-import java.io.Closeable;
-import java.io.InputStream;
+import android.content.pm.ActivityInfo;
+import android.view.View;
 
 /* JADX INFO: loaded from: classes.dex */
-public final class c implements Closeable {
-    public final String a;
-    public final InputStream b;
-    private final g c;
+final class c implements Runnable {
+    final /* synthetic */ b a;
+    private final /* synthetic */ ActivityInfo b;
+    private final /* synthetic */ View c;
+    private final /* synthetic */ e d;
+    private final /* synthetic */ int e;
 
-    private c(String str, InputStream inputStream, g gVar) {
-        this.a = str;
-        this.b = inputStream;
-        this.c = gVar;
+    c(b bVar, ActivityInfo activityInfo, View view, e eVar, int i) {
+        this.a = bVar;
+        this.b = activityInfo;
+        this.c = view;
+        this.d = eVar;
+        this.e = i;
     }
 
-    /* synthetic */ c(String str, InputStream inputStream, g gVar, byte b) {
-        this(str, inputStream, gVar);
-    }
-
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        this.c.close();
+    @Override // java.lang.Runnable
+    public final void run() {
+        this.c.post(new d(this, this.d, this.e, this.b.loadLabel(this.a.b), this.b.loadIcon(this.a.b)));
     }
 }
